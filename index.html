@@ -12,24 +12,19 @@
         <div class="lg:w-[35%] w-[100%]">
             <img src="images/ebalo.jpg" class="rounded-lg lg:w-[50%] w-[44%] mb-4 mx-auto lg:mx-0" alt="">
         </div>
-        <div class="md:px-0 px-4 mt-4 md:mt-0">
-            <h1 class="font-bold lg:text-5xl text-6xl dark:text-white">KIRILL SAKHAROV</h1>
-            <div class="text-gray-600 dark:text-gray-200 lg:text-xl text-2xl mt-2">Software Engineer | Fullstack Web Developer</div>
+        <div class="md:px-0 px-4 mt-4 md:mt-0 w-[100%] lg:w-[65%]">
+            <h1 class="font-bold lg:text-5xl text-6xl dark:text-white" x-text="homepage.Name"></h1>
+            <div class="text-gray-600 dark:text-gray-200 lg:text-xl text-2xl mt-2" x-text="homepage.Position"></div>
             <div class="text-gray-800 dark:text-gray-300 lg:text-lg text-xl mt-2">
                 <i class="fa-solid fa-location-dot"></i>
-                Belarus, Gomel, open to relocate
+                <span x-text="homepage.Location"></span>
             </div>
             <div class="flex flex-wrap mt-2">
-                <a href="mailto:spbg_grib@vk.com" class="link lg:w-[35%] sm:w-[50%] link-adaptive">spbg_grib@vk.com</a>
-                <a href="tel:+375336692689" class="link lg:w-[35%] sm:w-[50%] link-adaptive">+375(33)669-26-89</a>
-                <a href="https://www.linkedin.com/in/kirill-sakharov-862072227" class="link lg:w-[15%] sm:w-[50%] slink-adaptive" target="_blank">Linkedin</a>
-                <a href="https://github.com/m1n64" class="link lg:w-[15%] sm:w-[50%] link-adaptive" target="_blank">github</a>
+                <template x-for="link in links.data">
+                    <a :href="link.attributes.Link" :class="`lg:w-[${link.attributes.MDWidth}%]`" class="link sm:w-[50%] link-adaptive" x-text="link.attributes.Name"></a>
+                </template>
             </div>
-            <div class="mt-4 lg:text-lg text-3xl dark:text-white">
-                My name Kirill Sakharov, and I'm a Fullstack Web Developer. <br>
-                I am 21 years old, I was born in January 2001 in Belarus, Gomel. <br>
-                Graduated from college in 2020. My experience in web development is more than 2.5 years. <br>
-                My main technology stack is PHP (Laravel), JavaScript, TypeScript (Vue.js + VueX, Alpine.js).
+            <div class="mt-4 lg:text-lg text-3xl dark:text-white" x-text="homepage.About">
             </div>
 
         </div>
@@ -45,72 +40,15 @@
         </div>
 
         <div class="section-block">
-            <div class="skill-adaptive">
-                PHP
-                <div class="progress">
-                    <div class="sub-progress" style="width: 75%"></div>
+            <template x-for="skill in skills.data">
+                <div class="skill-adaptive">
+                    <span x-text="skill.attributes.Name"></span>
+                    <div class="progress">
+                        <div class="sub-progress" :style="`width: ${skill.attributes.Percent}%`"></div>
+                    </div>
                 </div>
-            </div>
-            <div class="skill-adaptive">
-                Laravel
-                <div class="progress">
-                    <div class="sub-progress" style="width: 50%"></div>
-                </div>
-            </div>
-            <div class="skill-adaptive">
-                JavaScript
-                <div class="progress">
-                    <div class="sub-progress" style="width: 35%"></div>
-                </div>
-            </div>
-            <div class="skill-adaptive">
-                TypeScript
-                <div class="progress">
-                    <div class="sub-progress" style="width: 35%"></div>
-                </div>
-            </div>
-            <div class="skill-adaptive">
-                Vue.js + VueX
-                <div class="progress">
-                    <div class="sub-progress" style="width: 44%"></div>
-                </div>
-            </div>
-            <div class="skill-adaptive">
-                SCSS
-                <div class="progress">
-                    <div class="sub-progress" style="width: 70%"></div>
-                </div>
-            </div>
-            <div class="skill-adaptive">
-                Tailwind.css
-                <div class="progress">
-                    <div class="sub-progress" style="width: 70%"></div>
-                </div>
-            </div>
-            <div class="skill-adaptive">
-                Alpine.js
-                <div class="progress">
-                    <div class="sub-progress" style="width: 60%"></div>
-                </div>
-            </div>
-            <div class="skill-adaptive">
-                MySQL
-                <div class="progress">
-                    <div class="sub-progress" style="width: 59%"></div>
-                </div>
-            </div>
-            <div class="skill-adaptive">
-                git
-                <div class="progress">
-                    <div class="sub-progress" style="width: 66%"></div>
-                </div>
-            </div>
-            <div class="skill-adaptive">
-                Docker
-                <div class="progress">
-                    <div class="sub-progress" style="width: 30%"></div>
-                </div>
-            </div>
+            </template>
+
         </div>
     </div>
 
@@ -123,69 +61,22 @@
         </div>
 
         <div class="">
-            <div class="multilines-block">
-                <div class="">
-                    <span class="font-bold uppercase dark:text-white">ITPROFIT</span> |
-                    <span class="dark:text-gray-300">Fullstack Web Developer</span>
+            <template x-for="job in jobs.data">
+                <div class="multilines-block">
+                    <div class="">
+                        <span class="font-bold uppercase dark:text-white" x-text="job.attributes.Name"></span> |
+                        <span class="dark:text-gray-300" x-text="job.attributes.Position"></span>
+                    </div>
+                    <div></div>
+                    <div class="text-gray-800 dark:text-gray-400 mb-1 font-adaptive-md" x-text="job.attributes.WorkTime"></div>
+                    <div class="text-gray-600 dark:text-gray-200 font-adaptive-md">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span x-text="job.attributes.Location"></span>
+                    </div>
+                    <div class="mt-4 dark:text-gray-200" x-text="job.attributes.Description">
+                    </div>
                 </div>
-                <div></div>
-                <div class="text-gray-800 dark:text-gray-400 mb-1 font-adaptive-md">October 2022 - now</div>
-                <div class="text-gray-600 dark:text-gray-200 font-adaptive-md">
-                    <i class="fa-solid fa-location-dot"></i>
-                    Belarus, Minsk
-                </div>
-                <div class="mt-4 dark:text-gray-200">
-                    Develop, refactor and support e-shops, corporate portals on various PHP frameworks and CMS in backend.
-                    Support and develop frontend on React, Vue and Nuxt frameworks (with TypeScript)
-                </div>
-            </div>
-            <div class="multilines-block">
-                <div class="">
-                    <span class="font-bold uppercase dark:text-white">MAGEDIA</span> |
-                    <span class="dark:text-gray-300">Software Engineer</span>
-                </div>
-                <div></div>
-                <div class="text-gray-800 dark:text-gray-400 mb-1 font-adaptive-md">July 2022 - September 2022 (3 month)</div>
-                <div class="text-gray-600 dark:text-gray-200 font-adaptive-md">
-                    <i class="fa-solid fa-location-dot"></i>
-                    Belarus, Minsk
-                </div>
-                <div class="mt-4 dark:text-gray-200">
-                    Develop, refactor and support e-shops on Magento 1, Magento 2, develop
-                    Magento modules
-                </div>
-            </div>
-            <div class="multilines-block">
-                <div class="">
-                    <span class="font-bold uppercase dark:text-white">LLC Medialine Group</span> |
-                    <span class="dark:text-gray-300">Backend Web Developer</span>
-                </div>
-                <div></div>
-                <div class="text-gray-800 dark:text-gray-400 mb-1 font-adaptive-md">January 2022 - May 2022 (5 month)</div>
-                <div class="text-gray-600 dark:text-gray-200 font-adaptive-md">
-                    <i class="fa-solid fa-location-dot"></i>
-                    Belarus, Gomel
-                </div>
-                <div class="mt-4 dark:text-gray-200">
-                    Develop and support e-shops on Bitrix CMS
-                </div>
-            </div>
-            <div class="multilines-block">
-                <div class="">
-                    <span class="font-bold uppercase dark:text-white">Freelance</span> |
-                    <span class="dark:text-gray-300">Web Developer</span>
-                </div>
-                <div></div>
-                <div class="text-gray-800 dark:text-gray-400 mb-1 font-adaptive-md">January 2019 - August 2021 (2 years 1 month)</div>
-                <div class="text-gray-600 dark:text-gray-200 font-adaptive-md">
-                    <i class="fa-solid fa-location-dot"></i>
-                    Belarus, Gomel
-                </div>
-                <div class="mt-4 dark:text-gray-200">
-                    Develop landings, news portals and blogs on PHP, Laravel.
-                    Develop VK and Telegram bots
-                </div>
-            </div>
+            </template>
         </div>
     </div>
 
@@ -198,19 +89,20 @@
         </div>
 
         <div class="section-block">
-            <div class="multilines-block">
-                <div class="">
-                    <span class="font-bold uppercase dark:text-white">Gomel State Machine-Building College</span>
+            <template x-for="education in educations.data">
+                <div class="multilines-block">
+                    <div class="">
+                        <span class="font-bold uppercase dark:text-white" x-text="education.attributes.Name"></span>
+                    </div>
+                    <div class="text-gray-800 dark:text-gray-400 mb-1 font-adaptive-md" x-text="education.attributes.EduactionTime"></div>
+                    <div class="text-gray-600 dark:text-gray-200 font-adaptive-md">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span x-text="education.attributes.Location"></span>
+                    </div>
+                    <div class="mt-4 dark:text-gray-200" x-text="education.attributes.Facultity">
+                    </div>
                 </div>
-                <div class="text-gray-800 dark:text-gray-400 mb-1 font-adaptive-md">September 2016 - June 2020</div>
-                <div class="text-gray-600 dark:text-gray-200 font-adaptive-md">
-                    <i class="fa-solid fa-location-dot"></i>
-                    Belarus, Gomel
-                </div>
-                <div class="mt-4 dark:text-gray-200">
-                    IT Technologies, CAD Programming
-                </div>
-            </div>
+            </template>
         </div>
     </div>
 
@@ -223,24 +115,19 @@
         </div>
 
         <div class="section-block justify-between">
-            <div class="skill-adaptive">
-                Russian -
-                <span class="text-gray-800 dark:text-gray-300">Native</span>
-            </div>
-            <div class="skill-adaptive">
-                Belarussian -
-                <span class="text-gray-800 dark:text-gray-300">Native</span>
-            </div>
-            <div class="skill-adaptive">
-                English -
-                <span class="text-gray-800 dark:text-gray-300">A2</span>
-            </div>
+            <template x-for="language in languages.data">
+                <div class="skill-adaptive">
+                    <span x-text="language.attributes.Name"></span> -
+                    <span class="text-gray-800 dark:text-gray-300" x-text="language.attributes.Level"></span>
+                </div>
+            </template>
+
         </div>
 
     </div>
 
     <template x-if="loading">
-        <div class="bg-emerald-500/[.95] fixed top-0 left-0 w-full h-screen flex justify-center content-center items-center">
+        <div class="bg-emerald-500 fixed top-0 left-0 w-full h-screen flex justify-center content-center items-center">
             <div>
                 <i class="fa-solid fa-circle-notch fa-spin fa-5x text-white"></i>
             </div>

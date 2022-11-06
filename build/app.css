@@ -12341,6 +12341,10 @@ video {
 .bg-emerald-500\/\[\.95\]{
   background-color: rgb(16 185 129 / .95);
 }
+.bg-emerald-500{
+  --tw-bg-opacity: 1;
+  background-color: rgb(16 185 129 / var(--tw-bg-opacity));
+}
 .bg-gradient-to-bl{
   background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
 }
@@ -12672,6 +12676,9 @@ body {
   }
   .lg\:w-\[15\%\]{
     width: 15%;
+  }
+  .lg\:w-\[65\%\]{
+    width: 65%;
   }
   .lg\:text-5xl{
     font-size: 3rem;

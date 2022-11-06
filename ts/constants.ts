@@ -1,0 +1,2 @@
+export const API_URL = "http://localhost:1337/api/";
+export const BEARER_TOKEN = "464479cf92a056e48591afaf2a8fda5aa4d1832d7800a672f1d32a5a440616f7fececb398a0f119ea63870ac1d3ad5abf73ddc85db8dda9943f9359309b06f4875bb3c4b2d14e2a0e0ad265c3e8eb4557ed100a7a2fe5308fc7de31086cee593f451d50ec251398c92749aaf3caa9a6fc7543a50aa9e4d838f06bb676a3cf6be";
