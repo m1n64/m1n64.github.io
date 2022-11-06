@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@fingerprintjs/fingerprintjs-pro": "^3.8.0",
     "@fortawesome/fontawesome-free": "^6.2.0",
     "alpinejs": "^3.10.5",
     "animate.css": "^4.1.1",

@@ -12274,9 +12274,6 @@ video {
 .fixed{
   position: fixed;
 }
-.absolute{
-  position: absolute;
-}
 .top-0{
   top: 0px;
 }
@@ -12340,16 +12337,6 @@ video {
 }
 .rounded-lg{
   border-radius: 0.5rem;
-}
-.bg-emerald-500{
-  --tw-bg-opacity: 1;
-  background-color: rgb(16 185 129 / var(--tw-bg-opacity));
-}
-.bg-emerald-500\/75{
-  background-color: rgb(16 185 129 / 0.75);
-}
-.bg-emerald-500\/\[\.9\]{
-  background-color: rgb(16 185 129 / .9);
 }
 .bg-emerald-500\/\[\.95\]{
   background-color: rgb(16 185 129 / .95);
