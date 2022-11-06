@@ -4,7 +4,7 @@
 @tailwind components;
 @tailwind utilities;
 
-html {
+/*html {
     height: 100%;
     width: 100%;
 }
@@ -15,7 +15,7 @@ body {
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
+}*/
 
 .section {
     @apply flex lg:flex-row flex-col justify-center lg:justify-start mb-10 flex-wrap;

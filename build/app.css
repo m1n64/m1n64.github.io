@@ -12395,7 +12395,7 @@ video {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-html {
+/*html {
     height: 100%;
     width: 100%;
 }
@@ -12406,7 +12406,7 @@ body {
     margin: 0;
     background-repeat: no-repeat;
     background-attachment: fixed;
-}
+}*/
 
 .section{
   margin-bottom: 2.5rem;
