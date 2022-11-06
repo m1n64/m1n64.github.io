@@ -7,8 +7,8 @@
 
 </head>
 <body class="bg-gradient-to-bl from-white to-emerald-100 dark:from-emerald-900 dark:to-slate-900">
-<div class="container mx-auto py-5">
-    <div class="section">
+<div x-data="indexPage" class="container mx-auto py-5">
+    <div class="section animate__animated">
         <div class="lg:w-[35%] w-[100%]">
             <img src="images/ebalo.jpg" class="rounded-lg lg:w-[50%] w-[44%] mb-4 mx-auto lg:mx-0" alt="">
         </div>
@@ -36,7 +36,7 @@
     </div>
     <hr class="mb-10">
 
-    <div class="section">
+    <div class="section animate__animated">
         <div class="badge">
             <span class="mr-1 ml-2">
                 <i class="fa-solid fa-laptop"></i>
@@ -114,7 +114,7 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section animate__animated">
         <div class="badge">
             <span class="mr-1 ml-2">
                 <i class="fa-solid fa-briefcase"></i>
@@ -189,7 +189,7 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section animate__animated">
         <div class="badge">
             <span class="mr-1 ml-2">
                 <i class="fa-solid fa-building-columns"></i>
@@ -214,7 +214,7 @@
         </div>
     </div>
 
-    <div class="section">
+    <div class="section animate__animated">
         <div class="badge">
             <span class="mr-1 ml-2">
                 <i class="fa-solid fa-globe"></i>
@@ -238,7 +238,16 @@
         </div>
 
     </div>
+
+    <template x-if="loading">
+        <div class="bg-emerald-500/[.95] fixed top-0 left-0 w-full h-screen flex justify-center content-center items-center">
+            <div>
+                <i class="fa-solid fa-circle-notch fa-spin fa-5x text-white"></i>
+            </div>
+        </div>
+    </template>
 </div>
 
+<script src="build/index.js"></script>
 </body>
 </html>
