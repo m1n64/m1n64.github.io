@@ -6,6 +6,8 @@ Alpine.data("indexPage", ()=>({
 
     init() {
         ScrollReveal().reveal(".section");
+        ScrollReveal().reveal(".section-block");
+        ScrollReveal().reveal(".multilines-block");
         setTimeout(()=>{
             this.loading = !this.loading;
         }, 600)

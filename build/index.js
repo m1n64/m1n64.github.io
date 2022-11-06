@@ -2997,6 +2997,8 @@ alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].data("indexPage", function () {
     init: function init() {
       var _this = this;
       (0,scrollreveal__WEBPACK_IMPORTED_MODULE_1__["default"])().reveal(".section");
+      (0,scrollreveal__WEBPACK_IMPORTED_MODULE_1__["default"])().reveal(".section-block");
+      (0,scrollreveal__WEBPACK_IMPORTED_MODULE_1__["default"])().reveal(".multilines-block");
       setTimeout(function () {
         _this.loading = !_this.loading;
       }, 600);
