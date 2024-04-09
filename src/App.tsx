@@ -1,5 +1,6 @@
 import React, {useCallback, useEffect} from "react";
-import {Box, Button, Grid, Image, Link, Menu, MenuButton, MenuItem, MenuList, Text} from "@chakra-ui/react";
+import {Box, Button, Flex, Grid, Image, Link, Menu, MenuButton, MenuItem, MenuList, Text} from "@chakra-ui/react";
+
 {/* @ts-ignore */}
 import photo from './assets/ebalo.jpg';
 import dataEn from './data/en.json';
@@ -13,13 +14,22 @@ import './App.css'
 
 
 function App() {
-    const [locale, setLocale] = React.useState<string>("en");
+    const [locale, setLocale] = React.useState<string>(() => {
+        return 'en';
+    });
     const [data, setData] = React.useState<any>(dataEn);
+    const [cvFile, setCvFile] = React.useState<any>(async () => {
+        const cv = await import(`./assets/${data.cv.file}`);
+        return cv.default;
+    });
 
     const loadData = useCallback(async () => {
         try {
             const data = await import(`./data/${locale}.json`);
             setData(data.default);
+
+            const cvFile = await import(`./assets/${data.default.cv.file}`);
+            setCvFile(cvFile.default);
         } catch (error) {
             console.error('Could not load locale data', error);
         }
@@ -32,20 +42,15 @@ function App() {
     return (
         <Grid
             h="100vh"
-            templateRows="auto 1fr auto"
-            templateColumns="17% 1fr"
-            templateAreas={`"header header"
-                      "nav main"`}
+            templateRows={{base: "auto 1fr auto", md: "auto 1fr"}}
+            templateColumns={{base: "100%", md: "20% 1fr"}}
+            templateAreas={{
+                base: `"nav"
+               "main"`,
+                md: `"header header"
+             "nav main"`
+            }}
         >
-            <Menu>
-                <MenuButton as={Button} size="sm">
-                    {locale === 'en' ? 'English' : 'Русский'}
-                </MenuButton>
-                <MenuList>
-                    <MenuItem onClick={() => setLocale('en')}>English</MenuItem>
-                    <MenuItem onClick={() => setLocale('ru')}>Русский</MenuItem>
-                </MenuList>
-            </Menu>
             {/* Navigation/Sidebar */}
             <Box gridArea="nav" bg="accent.100" color="textAccent.100" p={4} borderRadius={"0 15px 15px 0"}>
                 <Box>
@@ -102,15 +107,29 @@ function App() {
                 </Box>
 
                 <Box>
-                    <Button color={"white"} bg={"textAccent.100"} _hover={{
-                        bg: "textAccent.50"
-                    }}>{data.cv.name} ({data.cv.language})</Button>
+                    <Link href={cvFile} download>
+                        <Button color={"white"} bg={"textAccent.100"} _hover={{
+                            bg: "textAccent.50"
+                        }}>{data.cv.name} ({data.cv.language})</Button>
+                    </Link>
                 </Box>
             </Box>
 
             <Box gridArea="main" p={4}>
-                <Text as="h1" fontWeight={"bold"} color={"text.100"} fontSize={"3.4em"}
-                      textTransform={"uppercase"}>{data.name}</Text>
+                <Flex justifyContent="space-between" alignItems="center" width="100%">
+                    <Text as="h1" fontWeight={"bold"} color={"text.100"} fontSize={"3.4em"}
+                          textTransform={"uppercase"}>{data.name}</Text>
+                    <Menu>
+                        <MenuButton as={Button} size="sm">
+                            {locale === 'en' ? 'English' : 'Русский'}
+                        </MenuButton>
+                        <MenuList>
+                            <MenuItem onClick={() => setLocale('en')}>English</MenuItem>
+                            <MenuItem onClick={() => setLocale('ru')}>Русский</MenuItem>
+                        </MenuList>
+                    </Menu>
+                </Flex>
+
                 <Text as="h3" color={"text.80"} fontSize={"1.6em"}>{data.jobTitle}</Text>
                 <Line/>
                 <Text as={"p"} className={"pre-lined"} color={"text.100"} fontSize={"1.6em"}>
