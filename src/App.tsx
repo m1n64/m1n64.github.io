@@ -1,9 +1,13 @@
 import React, {useCallback, useEffect} from "react";
 import {Box, Button, Flex, Grid, Image, Link, Menu, MenuButton, MenuItem, MenuList, Text} from "@chakra-ui/react";
 
-{/* @ts-ignore */}
+// @ts-ignore
 import photo from './assets/ebalo.jpg';
 import dataEn from './data/en.json';
+// @ts-ignore
+import cvEn from './assets/CV.pdf';
+// @ts-ignore
+import cvRu from './assets/CV (Rus).pdf';
 import {SimpleHeader} from "./Components/Heading/SimpleHeader/SimpleHeader.tsx";
 import {Line} from "./Components/Line/Line.tsx";
 import {SimpleList} from "./Components/Lists/SimpleList/SimpleList.tsx";
@@ -18,18 +22,14 @@ function App() {
         return 'en';
     });
     const [data, setData] = React.useState<any>(dataEn);
-    const [cvFile, setCvFile] = React.useState<any>(async () => {
-        const cv = await import(`./assets/${data.cv.file}`);
-        return cv.default;
-    });
+    const [cvFile, setCvFile] = React.useState<any>(cvEn);
 
     const loadData = useCallback(async () => {
         try {
             const data = await import(`./data/${locale}.json`);
             setData(data.default);
 
-            const cvFile = await import(`./assets/${data.default.cv.file}`);
-            setCvFile(cvFile.default);
+            setCvFile(locale === 'en' ? cvEn : cvRu);
         } catch (error) {
             console.error('Could not load locale data', error);
         }
