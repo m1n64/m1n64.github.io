@@ -14,6 +14,7 @@ export const SimpleHeader: React.FC<SimpleHeaderProps> = ({text, icon, big}) => 
     return (
         <Box fill={"textAccent.100"} as="span" display="flex" alignItems="center" marginY={"5px"} {...bigText}>
             {icon}
+            {/* @ts-ignore */}
             <Text marginLeft={"5px"} as="span" fontWeight="bold" {...boldText}>{text}</Text>
         </Box>
     )

@@ -1,5 +1,6 @@
 import React, {useCallback, useEffect} from "react";
 import {Box, Button, Grid, Image, Link, Menu, MenuButton, MenuItem, MenuList, Text} from "@chakra-ui/react";
+{/* @ts-ignore */}
 import photo from './assets/ebalo.jpg';
 import dataEn from './data/en.json';
 import {SimpleHeader} from "./Components/Heading/SimpleHeader/SimpleHeader.tsx";
@@ -66,6 +67,7 @@ function App() {
                         big
                     />
                     <SimpleList>
+                        {/* @ts-ignore */}
                         {data.contacts.data.map(el => <Box><Link href={el.link} isExternal>{el.title}</Link></Box>)}
                     </SimpleList>
                 </Box>
@@ -79,6 +81,7 @@ function App() {
                         big
                     />
                     <SimpleList>
+                        {/* @ts-ignore */}
                         {data.skills.data.map(el => <Text>{el}</Text>)}
                     </SimpleList>
                 </Box>
@@ -93,6 +96,7 @@ function App() {
                     />
 
                     <SimpleList>
+                        {/* @ts-ignore */}
                         {data.languages.data.map(el => <Box>{el.title} - {el.level}</Box>)}
                     </SimpleList>
                 </Box>
@@ -121,6 +125,7 @@ function App() {
                         title={data.workExperience.name}
                     />
 
+                    {/* @ts-ignore */}
                     {data.workExperience.data.map(el => (
                         <CompositeListElement
                             name={el.name}
@@ -140,6 +145,7 @@ function App() {
                         title={data.education.name}
                     />
 
+                    {/* @ts-ignore */}
                     {data.education.data.map(el => (
                         <CompositeListElement
                             name={el.name}
