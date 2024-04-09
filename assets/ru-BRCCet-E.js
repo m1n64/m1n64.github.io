@@ -26,4 +26,4 @@ const e="Кирилл Сахаров",t="Software Engineer | Fullstack Web Devel
 Специальность - САПР-программирование
 Дипломный проект - Сайт специальности «Программируемые мобильные системы» для Гомельского государственного машиностроительного колледжа.`},{name:"ОПЕРАТОР ЭВМ",additional:"ГГМК",date:{from:"Февраль 2018",to:"Апрель 2018"},location:"Беларусь, Гомель",description:`Получил в рамках основного курса
 колледжа
-Специальность: Оператор ЭВМ 6 разряда.`}]},s={name:"Скачать резюме",file:"CV (rus).pdf",language:"ru"},m={name:e,jobTitle:t,location:n,biography:o,contacts:a,skills:i,languages:l,workExperience:r,education:c,cv:s};export{o as biography,a as contacts,s as cv,m as default,c as education,t as jobTitle,l as languages,n as location,e as name,i as skills,r as workExperience};
+Специальность: Оператор ЭВМ 6 разряда.`}]},s={name:"Скачать резюме",file:"CV (Rus).pdf",language:"ru"},m={name:e,jobTitle:t,location:n,biography:o,contacts:a,skills:i,languages:l,workExperience:r,education:c,cv:s};export{o as biography,a as contacts,s as cv,m as default,c as education,t as jobTitle,l as languages,n as location,e as name,i as skills,r as workExperience};
