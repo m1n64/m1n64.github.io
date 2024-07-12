@@ -55,6 +55,17 @@
   "workExperience": {
     "name": "Work Experience",
     "data": [
+       {
+        "name": "Delaem.IT",
+        "position": "Fullstack Web Developer",
+        "date": {
+          "from": "May 2024",
+          "to": "now",
+          "total": ""
+        },
+        "location": "Belarus (remote)",
+        "description": "Projects:\nCryptocurrency seller bot - worked on database design, development of modules and services for API, designing API services, designing modules for content management, designing and developing jobs and workers, design search engine for content system (Laravel, Filament, PostgreSQL, module system for Laravel)\nERP for a carsharing service - design and development of databases, ERP modules and relationships for these modules. Redisign filament admin panels, bug fixes and optimization of code and SQL queries (Laravel, Filament, PostgreSQL, module system for Laravel)\nStack: PHP (Laravel, Filament/Livewire), React.js/Next.js, tailwindcss, git, Docker"
+      },
       {
         "name": "VOZIM.RU",
         "position": "Fullstack Web Developer",
@@ -139,7 +150,7 @@
   },
   "cv": {
     "name": "Download CV",
-    "file": "CV.pdf",
+    "file": "NEW CV 2 eng.pdf",
     "language": "en"
   }
 }
