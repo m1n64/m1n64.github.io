@@ -5,9 +5,9 @@ import {Box, Button, Flex, Grid, Image, Link, Menu, MenuButton, MenuItem, MenuLi
 import photo from './assets/ebalo.jpg';
 import dataEn from './data/en.json';
 // @ts-ignore
-import cvEn from './assets/CV.pdf';
+import cvEn from './assets/NEW CV 2 eng.pdf';
 // @ts-ignore
-import cvRu from './assets/CV (Rus).pdf';
+import cvRu from './assets/NEW CV 2 ru.pdf';
 import {SimpleHeader} from "./Components/Heading/SimpleHeader/SimpleHeader.tsx";
 import {Line} from "./Components/Line/Line.tsx";
 import {SimpleList} from "./Components/Lists/SimpleList/SimpleList.tsx";
