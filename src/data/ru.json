@@ -56,6 +56,17 @@
     "name": "Опыт работы",
     "data": [
       {
+        "name": "Delaem.IT",
+        "position": "Fullstack Web Developer",
+        "date": {
+          "from": "Май 2024",
+          "to": "по настоящее время",
+          "total": ""
+        },
+        "location": "Беларусь (удалённо)",
+        "description": "Проекты:\nКриптобот - работал над проектированием базы данных, проектированием API-сервисов, разработкой модулей и сервисов для API, проектированием модулей для управления контентом, проектированием воркеров и jobs, проектированием поисковой системы для системы контента (Laravel, Filament, PostgreSQL, модульная система для Laravel)\nERP для сервиса каршеринга - проектирование и разработка баз данных, ERP-модулей и взаимосвязей для этих модулей. Редизайн админ-панелей filament, исправление ошибок и оптимизация кода и SQL-запросов (Laravel, Filament, PostgreSQL, модульная система для Laravel)\nСтек: PHP (Laravel, Filament/Livewire), React.js/Next.js, Tailwindcss, git, Docker."
+      },
+      {
         "name": "VOZIM.RU",
         "position": "Fullstack Web Developer",
         "date": {
